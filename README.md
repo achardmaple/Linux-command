@@ -27,6 +27,10 @@
 * .. &emsp;&emsp;&emsp; #父目录：上一级目录。
 * ~ &emsp;&emsp;&emsp; #用户目录：用户主目录，在 Linux 中，每个用户都有一个主目录，一般位于 /home/username 目录下。
 * 多级目录的表示方式，形如：/home/username/Documents/file.txt，又如：~/Documents/file.txt，又如：./Documents/file.txt，前者表示绝对路径，后两者表示相对路径。
+* 正则表达式：使用正则表达式可以对文件名进行匹配，常用的正则表达式有：
+  * `*` 匹配任意字符
+  * `[abc]` 匹配字符集中的任意一个字符
+  * [更多](https://worktile.com/kb/ask/485532.html)
 
 ### 指令的常见参数
 
@@ -64,10 +68,11 @@
 
 #### 查看目录（ls）
 
-* ls   &emsp;&emsp;                #查看当前目录下的所有目录和文件
-* ls -a   &emsp;&emsp;             #查看当前目录下的所有目录和文件（包括隐藏的文件）
-* ls -l    &emsp;&emsp;            #列表查看当前目录下的所有目录和文件（列表查看，显示更多信息），与命令"ll"效果一样
-* ls /bin    &emsp;&emsp;          #查看指定目录下的所有目录和文件
+* ls   &emsp;&emsp;&emsp;                #查看当前目录下的所有目录和文件
+* ls -a   &emsp;&emsp;&emsp;             #查看当前目录下的所有目录和文件（包括隐藏的文件）
+* ls -l    &emsp;&emsp;&emsp;            #列表查看当前目录下的所有目录和文件（列表查看，显示更多信息），与命令"ll"效果一样
+* ls /bin    &emsp;&emsp;&emsp;          #查看指定目录下的所有目录和文件
+* 支持正则表达式匹配，如：ls /bin/python*  &emsp;&emsp;&emsp;  #查看bin目录下以python开头的文件
 
 #### 创建目录（mkdir）
 
