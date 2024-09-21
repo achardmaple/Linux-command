@@ -8,6 +8,7 @@
 
 * [Linux 基本知识](#linux-基本知识)
   * [目录表示](#目录表示)
+  * [指令的常见参数](#指令的常见参数)
 * [Linux 系统结构](#linux-系统结构)
 * [Linux 常用指令和工具](#linux-常用指令和工具)
   * [1. 目录操作](#1-目录操作)
@@ -26,6 +27,12 @@
 * .. &emsp;&emsp;&emsp; #父目录：上一级目录。
 * ~ &emsp;&emsp;&emsp; #用户目录：用户主目录，在 Linux 中，每个用户都有一个主目录，一般位于 /home/username 目录下。
 * 多级目录的表示方式，形如：/home/username/Documents/file.txt，又如：~/Documents/file.txt，又如：./Documents/file.txt，前者表示绝对路径，后两者表示相对路径。
+
+### 指令的常见参数
+
+* -a  &emsp;&emsp;&emsp; #所有文件，包括隐藏文件。
+* -r  &emsp;&emsp;&emsp; #递归所有子目录。
+* -f  &emsp;&emsp;&emsp; #强制执行，不询问。
 
 ## Linux 系统结构
 
