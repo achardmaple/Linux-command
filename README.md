@@ -180,6 +180,7 @@
 
 * tar -zxvf a.tar          &emsp;&emsp;&emsp;             #解包至当前目录
 * tar -zxvf a.tar -C /usr------   &emsp;&emsp;&emsp;      #指定解压的位置
+* zip [-r] ./files.zip ./files   &emsp;&emsp;&emsp;      #压缩文件或文件夹，-r参数表示递归压缩文件夹
 * unzip test.zip       &emsp;&emsp;&emsp;       #解压*.zip文件
 * unzip -l test.zip     &emsp;&emsp;&emsp;      #查看*.zip文件的内容
 * unzip test.zip -d /usr------ &emsp;&emsp;&emsp;      #指定解压的位置
