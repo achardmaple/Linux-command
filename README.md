@@ -77,8 +77,9 @@
 
 #### 创建目录（mkdir）
 
-* mkdir tools     &emsp;&emsp;&emsp;     #在当前目录下创建一个名为tools的目录
-* mkdir /bin/tools   &emsp;&emsp; &emsp; #在指定目录下创建一个名为tools的目录
+* mkdir tools     &emsp;&emsp;&emsp;       #在当前目录下创建一个名为tools的目录
+* mkdir /bin/tools   &emsp;&emsp;&emsp;    #在指定目录下创建一个名为tools的目录
+* mkdir -p /bin/tools   &emsp;&emsp;&emsp; #创建多级目录，如不存在则创建，存在则不创建
 
 #### 删除目录与文件（rm）
 
@@ -91,13 +92,13 @@
 #### 修改目录（mv）
 
 * mv 当前目录名 新目录名   &emsp;&emsp;&emsp;     #修改目录名，同样适用与文件操作
-* mv /usr/tmp/tool /opt     &emsp;&emsp;&emsp;  #将/usr/tmp目录下的tool目录剪切到 /opt目录下面
-* mv -r /usr/tmp/tool /opt   &emsp;&emsp;&emsp; #递归剪切目录中所有文件和文件夹
+* mv /usr/tmp/tool/opt     &emsp;&emsp;&emsp;  #将 /usr/tmp 目录下的 tool 目录剪切到 /opt 目录下面
+* mv -r /usr/tmp/tool/opt   &emsp;&emsp;&emsp; #递归剪切目录中所有文件和文件夹
 
 #### 拷贝目录（cp）
 
-* cp /usr/tmp/tool /opt     &emsp;&emsp;&emsp;  #将/usr/tmp目录下的tool目录复制到 /opt目录下面
-* cp -r /usr/tmp/tool /opt  &emsp;&emsp;&emsp;  #递归剪复制目录中所有文件和文件夹
+* cp /usr/tmp/tool/opt     &emsp;&emsp;&emsp;  #将 /usr/tmp 目录下的 tool 目录复制到 /opt 目录下面
+* cp -r /usr/tmp/tool/opt  &emsp;&emsp;&emsp;  #递归剪复制目录中所有文件和文件夹
 
 #### 搜索目录（find）
 
