@@ -167,6 +167,12 @@
 * 普通授权    chmod +x a.txt
 * 8421法     chmod 777 a.txt   &emsp;&emsp;&emsp;   #1+2+4=7，"7"说明授予所有权限
 
+#### 文件所有权(chown / chgrp)
+
+* chown [-R] 账号名称 文件或目录名称   &emsp;&emsp;&emsp;   #修改文件或目录的拥有者
+* chown [-R] 账号名称:用户组名称 文件或目录名称   &emsp;&emsp;&emsp;   #修改文件或目录的拥有者和用户组
+* chgrp [-R] 用户组名称 文件或目录名称   &emsp;&emsp;&emsp;   #修改文件或目录的用户组
+
 ### 4. 打包与解压
 
 #### 说明
