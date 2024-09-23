@@ -120,6 +120,11 @@
 * rm 文件名     &emsp;&emsp;&emsp;         #删除当前目录下的文件
 * rm -f 文件名    &emsp;&emsp;&emsp;       #删除当前目录的的文件（不询问）
 
+#### 查看文件内容（cat / bat）
+
+* cat filename.txt     &emsp;&emsp;&emsp;     #将 filename.txt 文件的内容打印到终端上
+* cat filename1.txt > filename2.txt    &emsp;&emsp;&emsp;  #将 filename1.txt 文件的内容追加到 filename2.txt 文件中
+
 #### 编辑文件（vi / vim / nvim）
 
 * vi / vim / nvim filename.txt     &emsp;&emsp;&emsp;         #打开需要编辑的文件
