@@ -17,7 +17,8 @@
   * [4. 打包与解压](#4-打包与解压)
   * [5. 资源管理常用命令](#5-资源管理常用命令)
   * [6. 终端复用工具](#6-终端复用工具)
-  * [7. 其他常用命令](#7-其他常用命令)
+  * [7. 文件查找指令](#7-文件查找指令)
+  * [8. 其他常用命令](#8-其他常用命令)
 
 ## Linux 基本知识
 
@@ -226,16 +227,62 @@
 
 #### tmux
 
-### 7. 其他常用命令
+### 7. 文件查找指令
 
-#### find 命令
+1. which
 
-* find . -name "*.c"   &emsp;&emsp;&emsp;  #将目前目录及其子目录下所有延伸档名是 c 的文件列出来
-* find . -type f       &emsp;&emsp;&emsp;  #将目前目录其其下子目录中所有一般文件列出
-* find . -ctime -20    &emsp;&emsp;&emsp;  #将目前目录及其子目录下所有最近 20 天内更新过的文件列出
-* find /var/log -type f -mtime +7 -ok rm {} \;  &emsp;&emsp;&emsp;   #查找/var/log目录中更改时间在7日以前的普通文件，并在删除之前询问它们
-* find . -type f -perm 644 -exec ls -l {} \;   &emsp;&emsp;&emsp;    #查找前目录中文件属主具有读、写权限，并且文件所属组的用户和其他用户具有读权限的文件
-* find / -type f -size 0 -exec ls -l {} \;     &emsp;&emsp;&emsp;    #为了查找系统中所有文件长度为0的普通文件，并列出它们的完整路径
+    查找系统PATH下的可执行文件。查找时必须输入完整文件名。
+
+    ```bash
+    >>> which python3
+    /usr/bin/python3
+    >>> which pip
+    /usr/bin/pip
+    >>> which pip*
+    zsh: no matches found: pip*
+    ```
+
+2. whereis
+
+    通过文件索引数据库查找二进制文件、源代码文件、帮助文件。查找时必须输入完整文件名。
+
+    ```bash
+    >>> whereis python3
+    python3: /usr/bin/python3 /usr/lib/python3 /etc/python3 /usr/share/python3 /usr/share/man/man1/python3.1.gz
+    >>> whereis pip
+    pip: /usr/bin/pip /usr/share/man/man1/pip.1.gz
+    >>> whereis pip*
+    zsh: no matches found: pip*
+    ```
+
+3. locate
+
+    通过数据库查找任意文件，数据库通常在 /var/lib/slocate/slocate.db，可通过 updatedb 命令更新数据库。查找时可以输入部分文件名，可通过 -r 选项使用正则表达式。
+
+    ```bash
+    >>> locate python3
+    /var/cache/apt/archives/libpython3.10-dev_3.10.12-1~22.04.6_amd64.deb
+    /var/cache/apt/archives/libpython3.10-minimal_3.10.12-1~22.04.6_amd64.deb
+    /var/cache/apt/archives/libpython3.10-stdlib_3.10.12-1~22.04.6_amd64.deb
+    /var/cache/apt/archives/libpython3.10_3.10.12-1~22.04.6_amd64.deb
+    /var/cache/apt/archives/python3-pkg-resources_59.6.0-1.2ubuntu0.22.04.2_all.deb
+    /var/cache/apt/archives/python3-setuptools-whl_59.6.0-1.2ubuntu0.22.04.2_all.deb
+    /var/cache/apt/archives/python3-setuptools_59.6.0-1.2ubuntu0.22.04.2_all.deb
+    ...
+    ```
+
+4. find
+
+    通过直接搜索硬盘的方式查找文件，速度较慢，查找信息绝对可靠。
+
+    * find . -name "*.c"   &emsp;&emsp;&emsp;  #将目前目录及其子目录下所有延伸档名是 c 的文件列出来
+    * find . -type f       &emsp;&emsp;&emsp;  #将目前目录其其下子目录中所有一般文件列出
+    * find . -ctime -20    &emsp;&emsp;&emsp;  #将目前目录及其子目录下所有最近 20 天内更新过的文件列出
+    * find /var/log -type f -mtime +7 -ok rm {} \;  &emsp;&emsp;&emsp;   #查找/var/log目录中更改时间在7日以前的普通文件，并在删除之前询问它们
+    * find . -type f -perm 644 -exec ls -l {} \;   &emsp;&emsp;&emsp;    #查找前目录中文件属主具有读、写权限，并且文件所属组的用户和其他用户具有读权限的文件
+    * find / -type f -size 0 -exec ls -l {} \;     &emsp;&emsp;&emsp;    #为了查找系统中所有文件长度为0的普通文件，并列出它们的完整路径
+
+### 8. 其他常用命令
 
 #### grep 命令
 
