@@ -166,6 +166,7 @@
 
 * 普通授权    chmod +x a.txt
 * 8421法     chmod 777 a.txt   &emsp;&emsp;&emsp;   #1+2+4=7，"7"说明授予所有权限
+* 递归授权    chmod -R 777 folder   &emsp;&emsp;&emsp;   #递归授权目录 folder 下的所有文件和目录
 
 #### 文件所有权(chown / chgrp)
 
