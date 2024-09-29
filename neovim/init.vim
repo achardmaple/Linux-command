@@ -37,15 +37,9 @@ nnoremap <C-s> :w<CR>
 
 " -------------Windows下共用剪贴板------------
 if has('win32') || has('win64')
-	nnoremap yy "*yy
-	nnoremap yw "*yw
-	vnoremap y "*y
-	nnoremap dd "*dd
-	nnoremap dw "*dw
-	nnoremap D "*D
-	vnoremap d "*d
-	nnoremap x "*x
-	vnoremap x "*x
+	nnoremap yy yy:let @* = @"<CR>
+	nnoremap yw yw:let @* = @"<CR>
+	vnoremap y y:let @* = @"<CR>
 
 	nnoremap p "*p
 	nnoremap P "*P
@@ -55,6 +49,7 @@ if has('win32') || has('win64')
 	" 复制粘贴
 	vnoremap <C-c> "*y
 	inoremap <C-v> <Esc>"*pa
+	vnoremap <C-v> "*p
 endif
 
 " -----------------打开新标签-----------------
