@@ -19,6 +19,11 @@
   * [6. 终端复用工具](#6-终端复用工具)
   * [7. 文件查找指令](#7-文件查找指令)
   * [8. 其他常用命令](#8-其他常用命令)
+* [conda指令相关](#conda指令相关)
+  * [1. 启用conda环境](#启用conda环境)
+  * [2. 显示conda下的虚拟环境](#显示conda下的虚拟环境)
+  * [3. conda虚拟环境相关](#conda虚拟环境相关)
+* [huggingface相关](#huggingface相关)
 
 ## Linux 基本知识
 
@@ -339,16 +344,16 @@
   * wget -O <文件名> <下载网址>
 ## conda指令相关
 
-### 启用conda环境
+### 1.启用conda环境
 
 * source ./.bashrc
 
-### 显示conda下的虚拟环境
+### 2.显示conda下的虚拟环境
 
 * conda info -e
 * conda env list
 
-### conda虚拟环境相关
+### 3.conda虚拟环境相关
 
 #### 新建虚拟环境
 
