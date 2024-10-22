@@ -337,3 +337,44 @@
 * 示例：wget <下载网址>
   * #下载文件并以指定的文件名保存文件
   * wget -O <文件名> <下载网址>
+## conda指令相关
+
+### 启用conda环境
+
+* source ./.bashrc
+
+### 显示conda下的虚拟环境
+
+* conda info -e
+* conda env list
+
+### conda虚拟环境相关
+
+#### 新建虚拟环境
+
+* conda create -n [name] python=[python_version]
+
+#### 激活虚拟环境
+
+* conda activate [name]
+
+#### 退出虚拟环境
+
+* conda deactivate
+
+#### 删除虚拟环境
+
+* conda remove -n [name] --all
+
+#### 复制虚拟环境
+
+* conda create -n [new_name] --clone [old_name]
+
+## huggingface相关
+* 安装依赖：pip install -U huggingface_hub
+* 设置环境变量：
+  * Linux：export HF_ENDPOINT=https://hf-mirror.com（可以写入bash）
+  * Windows：$env:HF_ENDPOINT = "https://hf-mirror.com"
+* 下载：
+  * 下载模型：huggingface-cli download --resume-download naver-clova-ix/donut-base-finetuned-docvqa --local-dir naver-clova-ix/donut-base-finetuned-docvqa
+  * 下载数据集：huggingface-cli download --repo-type dataset --resume-download wikitext --local-dir wikitext
