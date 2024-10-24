@@ -20,9 +20,9 @@
   * [7. 文件查找指令](#7-文件查找指令)
   * [8. 其他常用命令](#8-其他常用命令)
 * [conda指令相关](#conda指令相关)
-  * [1. 启用conda环境](#启用conda环境)
-  * [2. 显示conda下的虚拟环境](#显示conda下的虚拟环境)
-  * [3. conda虚拟环境相关](#conda虚拟环境相关)
+  * [1. 启用conda环境](#1-启用conda环境)
+  * [2. 显示conda下的虚拟环境](#2-显示conda下的虚拟环境)
+  * [3. conda虚拟环境相关](#3-conda虚拟环境相关)
 * [huggingface相关](#huggingface相关)
 
 ## Linux 基本知识
@@ -342,18 +342,19 @@
 * 示例：wget <下载网址>
   * #下载文件并以指定的文件名保存文件
   * wget -O <文件名> <下载网址>
+
 ## conda指令相关
 
-### 1.启用conda环境
+### 1. 启用conda环境
 
 * source ./.bashrc
 
-### 2.显示conda下的虚拟环境
+### 2. 显示conda下的虚拟环境
 
 * conda info -e
 * conda env list
 
-### 3.conda虚拟环境相关
+### 3. conda虚拟环境相关
 
 #### 新建虚拟环境
 
@@ -376,10 +377,11 @@
 * conda create -n [new_name] --clone [old_name]
 
 ## huggingface相关
+
 * 安装依赖：pip install -U huggingface_hub
 * 设置环境变量：
-  * Linux：export HF_ENDPOINT=https://hf-mirror.com（可以写入bash）
-  * Windows：$env:HF_ENDPOINT = "https://hf-mirror.com"
+  * Linux：```export HF_ENDPOINT=https://hf-mirror.com```（可以写入bash）
+  * Windows：```$env:HF_ENDPOINT = "https://hf-mirror.com"```
 * 下载：
   * 下载模型：huggingface-cli download --resume-download naver-clova-ix/donut-base-finetuned-docvqa --local-dir naver-clova-ix/donut-base-finetuned-docvqa
   * 下载数据集：huggingface-cli download --repo-type dataset --resume-download wikitext --local-dir wikitext
