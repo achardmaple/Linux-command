@@ -114,6 +114,10 @@
 
 * pwd                &emsp;&emsp;&emsp;         #显示当前位置路径
 
+#### ranger文件管理器
+
+[Ranger 介绍](./tools_introduction/ranger.md)
+
 ### 2. 文件操作
 
 #### 新增文件（touch）
@@ -132,7 +136,7 @@
 
 #### 编辑文件（vi / vim / nvim）
 
-[Neovim 介绍](./tools_introduction/neovim/neovim.md)
+[Neovim 介绍](./tools_introduction/neovim.md)
 
 * vi / vim / nvim filename.txt     &emsp;&emsp;&emsp;         #打开需要编辑的文件
 * 进入后，操作界面有三种模式：命令模式（command mode）、插入模式（Insert mode）和底行模式（last line mode）
