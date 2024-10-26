@@ -132,7 +132,7 @@
 
 #### 编辑文件（vi / vim / nvim）
 
-[Neovim 介绍](./neovim/neovim_introduction.md)
+[Neovim 介绍](./tools_introduction/neovim/neovim.md)
 
 * vi / vim / nvim filename.txt     &emsp;&emsp;&emsp;         #打开需要编辑的文件
 * 进入后，操作界面有三种模式：命令模式（command mode）、插入模式（Insert mode）和底行模式（last line mode）

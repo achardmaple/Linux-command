@@ -49,7 +49,6 @@ if has('win32') || has('win64')
 	" 复制粘贴
 	vnoremap <C-c> "*y
 	inoremap <C-v> <Esc>"*pa
-	vnoremap <C-v> "*p
 endif
 
 " -----------------打开新标签-----------------
@@ -75,6 +74,10 @@ Plug 'lervag/vimtex'  " Latex
 Plug 'luozhiya/fittencode.nvim'  " AI补全
 Plug 'projekt0n/github-nvim-theme'  " GitHub主题
 Plug 'itchyny/lightline.vim'  " 状态栏
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }  " 模糊查询
+Plug 'junegunn/fzf.vim'  " 模糊查询
+Plug 'petertriho/nvim-scrollbar'  " 滚动条
+Plug 'gen740/SmoothCursor.nvim'  " 左侧光标
 
 " 中文输入
 Plug 'ZSaberLv0/ZFVimIM'
@@ -111,12 +114,18 @@ noremap <Leader>c :call nerdcommenter#Comment('', 'Toggle')<CR>
 inoremap <Leader>c <Esc>:call nerdcommenter#Comment('', 'Toggle')<CR>a
 
 " -----------------coc.nvim配置-----------------
-" 使用 ctrk + j 向下选择自动补全的候选词
+" 使用 ctrl + j 向下选择自动补全的候选词
 inoremap <silent><expr> <C-j> coc#pum#visible() ? coc#pum#next(1) : "\<C-j>"
 " 使用 ctrl + k 向上选择自动补全的候选词
 inoremap <silent><expr> <C-k> coc#pum#visible() ? coc#pum#prev(1) : "\<C-k>"
 " 按 ctrl + l 确认所选择的候选词
 inoremap <silent><expr> <C-l> coc#pum#visible() ? coc#pum#confirm() : "\<C-l>"
+" 定义跳转
+nnoremap gd <Plug>(coc-definition)
+nnoremap gD <Plug>(coc-declaration)
+nnoremap gy <Plug>(coc-type-definition)
+nnoremap gi <Plug>(coc-implementation)
+nnoremap gr <Plug>(coc-references)
 
 " ------------------autoformat------------------
 nnoremap <Leader>f :Autoformat<CR>
@@ -169,7 +178,29 @@ vmap <silent> <Leader>t <Plug>TranslateWV
 " --------------------theme---------------------
 :colorscheme github_dark_high_contrast
 
-" --------------------AI补全--------------------
+" -------------------模糊查询-------------------
+nnoremap <C-m> :Marks<CR>
+nnoremap <C-j> :Jumps<CR>
+nnoremap <C-t> :Files<CR>
+
+" -------------------lua脚本--------------------
 lua <<EOF
-require('fittencode').setup()
+require('fittencode').setup()  -- AI补全
+require('scrollbar').setup()  -- 滚动条
+require('smoothcursor').setup({
+	fancy = {
+		enable = true,
+		head = { cursor = "▷", texthl = "SmoothCursor", linehl = nil },
+		body = {
+			{ cursor = "󰝥", texthl = "SmoothCursorAqua" },
+			{ cursor = "󰝥", texthl = "SmoothCursorAqua" },
+			{ cursor = "●", texthl = "SmoothCursorAqua" },
+			{ cursor = "●", texthl = "SmoothCursorAqua" },
+			{ cursor = "•", texthl = "SmoothCursorAqua" },
+			{ cursor = "•", texthl = "SmoothCursorAqua" },
+			{ cursor = ".", texthl = "SmoothCursorAqua" },
+		},
+		tail = { cursor = ".", texthl = "SmoothCursorAqua" }
+	}
+})  -- 左侧光标
 EOF
