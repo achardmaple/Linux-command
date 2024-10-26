@@ -324,7 +324,14 @@
 #### df 命令
 
 * 说明：显示文件系统的磁盘使用情况
-* df -h       &emsp;&emsp;&emsp;     #一种易看的显示
+* -h       &emsp;&emsp;&emsp;     # human readable，以可读的方式显示（以K，M，G等为单位显示）
+
+#### du 命令
+
+* 说明：显示指定目录或文件所占用的磁盘空间
+* -h       &emsp;&emsp;&emsp;     # human readable，以可读的方式显示（以K，M，G等为单位显示）
+* -s       &emsp;&emsp;&emsp;     # 显示文件或目录的总大小（只显示一层目录）
+* --depth=n  &emsp;&emsp;&emsp;   # 显示目录的深度，n为目录的层数
 
 #### scp 命令
 
@@ -380,8 +387,8 @@
 
 * 安装依赖：pip install -U huggingface_hub
 * 设置环境变量：
-  * Linux：```export HF_ENDPOINT=https://hf-mirror.com```（可以写入bash）
-  * Windows：```$env:HF_ENDPOINT = "https://hf-mirror.com"```
+  * Linux：`export HF_ENDPOINT=https://hf-mirror.com`（可以写入bash）
+  * Windows：`$env:HF_ENDPOINT = "https://hf-mirror.com"`
 * 下载：
   * 下载模型：huggingface-cli download --resume-download naver-clova-ix/donut-base-finetuned-docvqa --local-dir naver-clova-ix/donut-base-finetuned-docvqa
   * 下载数据集：huggingface-cli download --repo-type dataset --resume-download wikitext --local-dir wikitext
