@@ -309,6 +309,10 @@
 
 ### 8. 其他常用命令
 
+#### sudo 命令
+
+* -E       &emsp;&emsp;&emsp;     # 保留环境变量，即在执行sudo命令时，环境变量也会被保留。
+
 #### grep 命令
 
 * grep -i "the" demo_file           &emsp;&emsp;&emsp;   #在文件中查找字符串(不区分大小写)
