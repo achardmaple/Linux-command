@@ -248,6 +248,19 @@
 
 #### screen
 
+* screen     &emsp;&emsp;&emsp;    # 创建新的 screen 会话
+* screen -S session_name     &emsp;    # 创建新的 screen 会话并指定名称
+* screen -r  &emsp;&emsp;&emsp;    # 恢复 screen 会话
+* screen -ls &emsp;&emsp;&emsp;    # 列出当前所有的 screen 会话
+* screen -x  &emsp;&emsp;&emsp;    # 重新进入以挂起的 screen 会话
+* screen -d  &emsp;&emsp;&emsp;    # 挂起 screen 会话
+
+在 screen 会话中：
+
+    * Ctrl-a d   &emsp;&emsp;&emsp;    # 挂起当前 screen 会话
+
+screen 会话挂起（detach）后，会话中正在运行的程序不会被关闭，而是继续运行。
+
 #### tmux
 
 ### 7. 文件查找指令
