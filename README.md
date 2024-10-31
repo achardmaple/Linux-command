@@ -196,9 +196,9 @@
 
 #### 打包文件
 
-* tar -zcvf &emsp;&emsp;&emsp;  #打包压缩后的文件名 要打包的文件
-  参数说明：z：调用gzip压缩命令进行压缩; c：打包文件; v：显示运行过程; f：指定文件名;
-  示例：
+* tar -zcvf &emsp;&emsp;&emsp;  #打包压缩后的文件名 要打包的文件  
+  参数说明：z：调用gzip压缩命令进行压缩; c：打包文件; v：显示运行过程; f：指定文件名;  
+  示例：  
   tar -zcvf a.tar file1 file2,...      #多个文件压缩打包
 
 #### 解压文件
@@ -257,11 +257,13 @@
 
 在 screen 会话中：
 
-    * Ctrl-a d   &emsp;&emsp;&emsp;    # 挂起当前 screen 会话
+* Ctrl-a d   &emsp;&emsp;&emsp;    # 挂起当前 screen 会话
 
 screen 会话挂起（detach）后，会话中正在运行的程序不会被关闭，而是继续运行。
 
 #### tmux
+
+[Tmux 介绍](./tools_introduction/tmux.md)
 
 ### 7. 文件查找指令
 
