@@ -266,13 +266,14 @@ screen 会话挂起（detach）后，会话中正在运行的程序不会被关�
 
 [Tmux 介绍](./tools_introduction/tmux.md)
 
-#### 任务进程(jobs, fg, bg, ctrl-z, &)
+#### 任务进程（jobs, fg, bg, ctrl-z, &）
 
 1. ctrl-z    &emsp;&emsp;&emsp;    # 将当前任务进程置于后台，暂停运行
 2. jobs      &emsp;&emsp;&emsp;    # 显示当前任务进程
 3. fg / fg %job_number     &emsp;    # 将后台任务进程放到前台并恢复运行
 4. bg / bg %job_number     &emsp;    # 继续运行后台任务进程，但进程仍处于后台
-5. 在命令后加&    &emsp;&emsp;&emsp;    # 在后台运行命令，不影响当前会话
+5. 在命令后加 &    &emsp;&emsp;&emsp;    # 在后台运行命令，不影响当前会话
+6. nohup + 命令    &emsp;&emsp;&emsp;    # 重定向命令的输入输出，默认重定向输出到 nohup.out 文件中，配合 & 使用可实现后台运行，例：`nohup python test.py &`
 
 ### 7. 文件查找指令
 
