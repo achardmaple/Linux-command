@@ -58,9 +58,9 @@ Neovim 较于 Vim 的优点本文不再赘述。
 
 Neovim 可通过 vim 脚本或 lua 脚本二者之一进行配置，本文介绍通过 vim 脚本进行配置的方法。
 
-Neovim 的配置文件为 init.vim，位于 ~/.config/nvim/init.vim。
+Neovim 的配置文件为 `init.vim`，位于 `~/.config/nvim/init.vim`。
 
-接下来将通过示例的 [init.vim](./init.vim) 配置文件介绍配置文件中常使用到的 vim 脚本语句，以下将 Vim / Neovim 均简称为 vim。
+接下来将通过示例的 [init.vim](/tools_config_example/neovim/init.vim) 配置文件介绍配置文件中常使用到的 vim 脚本语句，以下将 Vim / Neovim 均简称为 vim。
 
 1. set 指令
 

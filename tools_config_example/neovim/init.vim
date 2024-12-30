@@ -41,10 +41,10 @@ if has('win32') || has('win64')
 	nnoremap yw yw:let @* = @"<CR>
 	vnoremap y y:let @* = @"<CR>
 
-	nnoremap p "*p
-	nnoremap P "*P
-	vnoremap p "*p
-	vnoremap P "*P
+	nnoremap <Leader>p "*p
+	nnoremap <Leader>P "*P
+	vnoremap <Leader>p "*p
+	vnoremap <Leader>P "*P
 
 	" 复制粘贴
 	vnoremap <C-c> "*y
@@ -78,6 +78,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }  " 模糊查询
 Plug 'junegunn/fzf.vim'  " 模糊查询
 Plug 'petertriho/nvim-scrollbar'  " 滚动条
 Plug 'gen740/SmoothCursor.nvim'  " 左侧光标
+Plug 'voldikss/vim-browser-search'  " 浏览器搜索
 
 " 中文输入
 Plug 'ZSaberLv0/ZFVimIM'
@@ -175,13 +176,23 @@ let g:translator_default_engines=['youdao', 'bing']
 nmap <silent> <Leader>t <Plug>TranslateW
 vmap <silent> <Leader>t <Plug>TranslateWV
 
+" ------------------FittenCode------------------
+nnoremap <Leader>a :Fitten start_chat<CR>
+vnoremap <Leader>a :Fitten explain_code<CR>
+nnoremap <Leader>q :Fitten toggle_chat<CR>
+
 " --------------------theme---------------------
 :colorscheme github_dark_high_contrast
 
 " -------------------模糊查询-------------------
 nnoremap <C-m> :Marks<CR>
-nnoremap <C-j> :Jumps<CR>
+nnoremap <C-n> :Jumps<CR>
 nnoremap <C-t> :Files<CR>
+
+" ------------------浏览器搜索------------------
+
+nmap <silent> <Leader>s <Plug>SearchNormal
+vmap <silent> <Leader>s <Plug>SearchVisual
 
 " -------------------lua脚本--------------------
 lua <<EOF

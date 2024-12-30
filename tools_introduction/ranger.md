@@ -17,7 +17,7 @@ Ranger 是一款基于 Python 的文件管理器，可以自定义快捷键，�
     sudo pip3 install ranger-fm
     ```
 
-2. 将 5 个配置文件放入 ~/.config/ranger/ 中。
+2. 将 [5 个配置文件](/tools_config_example/ranger/) 放入 ~/.config/ranger/ 中。
 
 3. 在 rc.conf 中设置快捷键。
 
