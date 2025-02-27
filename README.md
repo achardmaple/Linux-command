@@ -504,7 +504,7 @@ cat local_file | ssh remote_user@remote_host "cat - > remote_file"
 
     grep 的语法格式：`grep [options] pattern [file]`，其中 options 可选，pattern 为要查找的字符串，file 为要查找的文件，file 为空或为 `-` 时表示从标准输入读取数据
 
-    **常用选项**：
+    常用选项：
 
     * -i：忽略大小写
     * -n：显示行号
@@ -521,29 +521,29 @@ cat local_file | ssh remote_user@remote_host "cat - > remote_file"
 
     awk 的语法格式：`awk [options] 'pattern {action}' file(s)`，其中 options 可选，pattern 为匹配内容，{action} 为对匹配内容的操作，默认为打印匹配行，file(s) 为要处理的文件，file(s) 可以是多个，也可以是 `-`，表示从标准输入读取数据。
 
-    **常用选项**：
+    常用选项：
 
     * -F：指定分隔符
 
-    **常用运算符**：
+    常用运算符：
 
     * $：字段符（一行可能会被 -F 分割为多个字段）
     * 算术运算符、关系运算符、赋值运算符，与 python 类似
     * ||、&&、!：逻辑或与非
     * in：数组成员
 
-    **常用函数**：
+    常用函数：
 
     * length(string)：返回字符串长度
     * substr(string, start, length)：返回子字符串
 
-    **常用内建变量**:
+    常用内建变量:
 
     * NR：当前记录数（行号，从1开始）
     * NF：当前字段数（列号，从1开始）
     * $0：当前行
 
-    **示例**：ping 局域网内 ip，并过滤出成功收到数据包的 ip，`-F '-- | ping'` 的 `|` 是分隔符，分隔 `-- ` 与 ` ping`
+    示例：ping 局域网内 ip，并过滤出成功收到数据包的 ip，`-F '-- | ping'` 的 `|` 是分隔符，分隔 `-- ` 与 ` ping`
 
     ```bash
     for num in {1..254}
