@@ -5,6 +5,7 @@ set termencoding=utf-8
 set nu
 
 imap jj <Esc>
+:tnoremap jj <C-\><C-n>
 
 " --------------------缩进--------------------
 nnoremap <C-p> <C-i>  " ctrl+p 代替 ctrl+i 的功能（光标位置前进）
@@ -27,10 +28,6 @@ noremap L $
 noremap J 5j
 noremap K 5k
 
-" ----------------Linux复制粘贴---------------
-vnoremap <C-c> y
-inoremap <C-v> <Esc>pa
-
 " --------------------保存--------------------
 inoremap <C-s> <Esc>:w<CR>a
 nnoremap <C-s> :w<CR>
@@ -40,15 +37,10 @@ if has('win32') || has('win64')
 	nnoremap yy yy:let @* = @"<CR>
 	nnoremap yw yw:let @* = @"<CR>
 	vnoremap y y:let @* = @"<CR>
-
 	nnoremap <Leader>p "*p
 	nnoremap <Leader>P "*P
 	vnoremap <Leader>p "*p
 	vnoremap <Leader>P "*P
-
-	" 复制粘贴
-	vnoremap <C-c> "*y
-	inoremap <C-v> <Esc>"*pa
 endif
 
 " -----------------打开新标签-----------------
@@ -79,6 +71,9 @@ Plug 'junegunn/fzf.vim'  " 模糊查询
 Plug 'petertriho/nvim-scrollbar'  " 滚动条
 Plug 'gen740/SmoothCursor.nvim'  " 左侧光标
 Plug 'voldikss/vim-browser-search'  " 浏览器搜索
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }  " Markdown预览
+Plug 'kamykn/spelunker.vim'  " 单词拼写检查
+Plug 'jpalardy/vim-slime'  " 发送代码到REPL
 
 " 中文输入
 Plug 'ZSaberLv0/ZFVimIM'
@@ -190,9 +185,33 @@ nnoremap <C-n> :Jumps<CR>
 nnoremap <C-t> :Files<CR>
 
 " ------------------浏览器搜索------------------
-
 nmap <silent> <Leader>s <Plug>SearchNormal
 vmap <silent> <Leader>s <Plug>SearchVisual
+
+" -----------------Markdown预览-----------------
+nmap <Leader>m <Plug>MarkdownPreviewToggle
+
+" -----------------单词拼写检查-----------------
+set nospell  " 关闭自带的拼写检查
+let g:spelunker_check_type = 2  " 实时动态检查
+let g:spelunker_disable_uri_checking = 1  " 禁用网址检查
+let g:spelunker_disable_email_checking = 1  " 禁用邮件检查
+let g:spelunker_disable_account_name_checking = 1  " 禁用用户名检查
+let g:spelunker_disable_acronym_checking = 1  " 禁用缩写检查
+let g:spelunker_disable_backquoted_checking = 1  " 禁用反引号检查
+nmap zl Zl  " 更改光标下单词
+nmap zg Zg  " 标记为正确拼写
+nmap zug Zug  " 取消标记为正确拼写
+nmap zw Zw  " 标记为错误拼写
+nmap zuw ZuW  " 取消标记为错误拼写
+
+" ----------------发送代码到REPL----------------
+let g:slime_target = "tmux"
+let g:slime_default_config = {"socket_name": get(split($TMUX, ","), 0), "target_pane": ".2"}
+let g:slime_bracketed_paste = 1
+if has('win32') || has('win64')
+	let g:slime_target = "neovim"
+endif
 
 " -------------------lua脚本--------------------
 lua <<EOF
@@ -215,3 +234,22 @@ require('smoothcursor').setup({
 	}
 })  -- 左侧光标
 EOF
+
+" --------------------neovide-------------------
+if exists("g:neovide")
+	set guifont=MesloLGM\ Nerd\ Font:h12
+	let g:neovide_transparency = 0.95
+	let g:neovide_title_background_color = "#333333"
+	let g:neovide_title_text_color = "#FFFFFF"
+
+	function! ToggleFullScreen()
+		if g:neovide_fullscreen == 0
+			let g:neovide_fullscreen=1
+		else
+			let g:neovide_fullscreen=0
+		endif
+	endfunction
+	nnoremap <A-Enter> :call ToggleFullScreen()<CR>
+
+	autocmd VimLeave * let g:neovide_fullscreen=0
+endif
