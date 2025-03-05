@@ -14,6 +14,10 @@ nmap <S-TAB> V<
 vmap <TAB> >gv
 vmap <S-TAB> <gv
 
+" ------------------分割窗口------------------
+nnoremap <Leader>% :vsp<CR><C-w>l
+nnoremap <Leader>" :sp<CR><C-w>j
+
 " -------------------切窗口-------------------
 map <C-h> <C-w>h
 map <C-j> <C-w>j
@@ -32,16 +36,14 @@ noremap K 5k
 inoremap <C-s> <Esc>:w<CR>a
 nnoremap <C-s> :w<CR>
 
-" -------------Windows下共用剪贴板------------
-if has('win32') || has('win64')
-	nnoremap yy yy:let @* = @"<CR>
-	nnoremap yw yw:let @* = @"<CR>
-	vnoremap y y:let @* = @"<CR>
-	nnoremap <Leader>p "*p
-	nnoremap <Leader>P "*P
-	vnoremap <Leader>p "*p
-	vnoremap <Leader>P "*P
-endif
+" -----Windows系统/Linux tmux 共用剪贴板------
+nnoremap yy yy:let @* = @"<CR>
+nnoremap yw yw:let @* = @"<CR>
+vnoremap y y:let @* = @"<CR>
+nnoremap <Leader>p "*p
+nnoremap <Leader>P "*P
+vnoremap <Leader>p "*p
+vnoremap <Leader>P "*P
 
 " -----------------打开新标签-----------------
 nnoremap gn :tabnew
