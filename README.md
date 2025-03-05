@@ -267,11 +267,11 @@
     * --hidden：搜索隐藏文件
     * --ignore PATTERN：忽略指定文件或目录
 
-6. fzf
+6. [fzf](https://github.com/junegunn/fzf)
 
     fzf 是一款命令行模糊查找工具，能够快速定位文件、命令、书签等，支持模糊搜索，并提供交互式选择。
 
-    fzf 本身不具备搜索功能，需要从其他命令或程序提供的输入中进行模糊匹配，默认使用命令是 find。可通过在 shell 配置文件中设置环境变量 `$FZF_DEFAULT_COMMAND` 来指定默认的搜索命令，比如通过设置 `export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g'` 来使用 ag 命令进行文件名的模糊搜索。
+    fzf 本身不具备搜索功能，需要从其他命令或程序提供的输入中进行模糊匹配，默认使用命令是 find。可通过在 shell 配置文件中设置环境变量 `$FZF_DEFAULT_COMMAND` / `$FZF_CTRL_T_COMMAND` 等来指定搜索命令，比如通过设置 `export FZF_DEFAULT_COMMAND="ag --hidden --ignore .git -g ''"` 来使用 ag 命令进行文件名的模糊搜索。此外，还可通过设置环境变量 `$FZF_DEFAULT_OPTS` 等来设置 fzf 的显示样式。
 
     * Ctrl-t：搜索文件路径和文件夹目录，通过形如 `vim ./test**<TAB>` 的命令同样可以打开搜索界面，进行文件路径和文件夹目录快捷补全
     * Alt-c：搜索文件夹目录，通过形如 `cd ./test**<TAB>` 的命令同样可以打开搜索界面，进行文件夹目录的快捷补全
