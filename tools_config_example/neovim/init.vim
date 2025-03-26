@@ -3,9 +3,10 @@ set fileencodings=ucs-bom,utf-8,chinese
 set fileencoding=utf-8
 set termencoding=utf-8
 set nu
+set noshowmode
 
 imap jj <Esc>
-:tnoremap jj <C-\><C-n>
+tnoremap jj <C-\><C-n>
 
 " --------------------缩进--------------------
 nnoremap <C-p> <C-i>  " ctrl+p 代替 ctrl+i 的功能（光标位置前进）
@@ -24,13 +25,17 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+" --------------按显示行移动光标--------------
+nnoremap j gj
+nnoremap k gk
+
 " ---------------移动到行首行尾---------------
-noremap H ^
-noremap L $
+noremap H g^
+noremap L g$
 
 " -----------------快速跳转行-----------------
-noremap J 5j
-noremap K 5k
+noremap J 5gj
+noremap K 5gk
 
 " --------------------保存--------------------
 inoremap <C-s> <Esc>:w<CR>a
@@ -40,10 +45,12 @@ nnoremap <C-s> :w<CR>
 nnoremap yy yy:let @* = @"<CR>
 nnoremap yw yw:let @* = @"<CR>
 vnoremap y y:let @* = @"<CR>
+nnoremap <Leader>y :let @* = @"<CR>
 nnoremap <Leader>p "*p
 nnoremap <Leader>P "*P
 vnoremap <Leader>p "*p
 vnoremap <Leader>P "*P
+inoremap <C-v> <Esc>"*pa
 
 " -----------------打开新标签-----------------
 nnoremap gn :tabnew
@@ -67,9 +74,11 @@ Plug 'tmhedberg/SimpylFold'  " 代码折叠
 Plug 'lervag/vimtex'  " Latex
 Plug 'luozhiya/fittencode.nvim'  " AI补全
 Plug 'projekt0n/github-nvim-theme'  " GitHub主题
+Plug 'xiyaowong/transparent.nvim'  " 透明背景
 Plug 'itchyny/lightline.vim'  " 状态栏
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }  " 模糊查询
 Plug 'junegunn/fzf.vim'  " 模糊查询
+Plug 'rking/ag.vim'  " 关键词搜索
 Plug 'petertriho/nvim-scrollbar'  " 滚动条
 Plug 'gen740/SmoothCursor.nvim'  " 左侧光标
 Plug 'voldikss/vim-browser-search'  " 浏览器搜索
@@ -139,9 +148,10 @@ let g:formatdef_json = '"jq ."'
 let g:formatters_json = ['json']
 
 " -----------------中文输入配置-----------------
-let g:ZFVimIM_pinyin_gitUserEmail='user@example.com'
-let g:ZFVimIM_pinyin_gitUserName='user_name'
-let g:ZFVimIM_pinyin_gitUserToken='xxxxxxxxxx'
+" 配置对应环境变量
+let g:ZFVimIM_pinyin_gitUserEmail=getenv('GITEE_USER_EMAIL')
+let g:ZFVimIM_pinyin_gitUserName=getenv('GITEE_USER_NAME')
+let g:ZFVimIM_pinyin_gitUserToken=getenv('GITEE_TOKEN')
 " 中文标点
 let g:ZFVimIM_symbolMap = {
             \   ' ' : [''],
@@ -180,6 +190,12 @@ nnoremap <Leader>q :Fitten toggle_chat<CR>
 
 " --------------------theme---------------------
 :colorscheme github_dark_high_contrast
+
+" ------------------Visual 颜色-----------------
+:highlight Visual guibg=#a8d1d1 guifg=#c71f5c
+
+" ----------------------Ag----------------------
+nnoremap <Leader>/ :Ag<Space>
 
 " -------------------模糊查询-------------------
 nnoremap <C-m> :Marks<CR>
@@ -240,7 +256,7 @@ EOF
 " --------------------neovide-------------------
 if exists("g:neovide")
 	set guifont=MesloLGM\ Nerd\ Font:h12
-	let g:neovide_transparency = 0.95
+	let g:neovide_transparency = 0.85
 	let g:neovide_title_background_color = "#333333"
 	let g:neovide_title_text_color = "#FFFFFF"
 
