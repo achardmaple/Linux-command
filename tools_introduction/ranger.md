@@ -45,3 +45,12 @@ Ranger 是一款基于 Python 的文件管理器，可以自定义快捷键，�
 3. 常用命令
 
     * :rename xxx 重命名文件。
+
+## 其他配置
+
+在 ~/.bashrc 或 ~/.zshrc 中添加以下代码，可以实现在退出 ranger 时自动进入当前浏览的目录。
+
+```bash
+# CD into the last directory when you exit ranger.
+alias ranger='ranger --choosedir=$HOME/.config/ranger/.rangerdir; LASTDIR=`cat $HOME/.config/ranger/.rangerdir`; cd "$LASTDIR"'
+```
