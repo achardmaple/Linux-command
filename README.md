@@ -357,6 +357,7 @@
    * -h       &emsp;&emsp;&emsp;     # human readable，以可读的方式显示（以K，M，G等为单位显示）
    * -s       &emsp;&emsp;&emsp;     # 显示文件或目录的总大小（只显示一层目录）
    * --depth=n  &emsp;&emsp;&emsp;   # 显示目录的深度，n为目录的层数
+   * 如：du -h --max-depth=1 | sort -hr，对本级目录的所有文件按可读占用空间的顺序显示
 
 #### top / htop 命令
 
