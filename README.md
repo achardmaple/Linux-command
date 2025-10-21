@@ -399,7 +399,8 @@ screen 会话挂起（detach）后，会话中正在运行的程序不会被关�
 #### ssh
 
 * ssh username@ip_address     &emsp;&emsp;&emsp;    # 远程登录，默认端口为22
-* ssh -P 22 username@ip_address     &emsp;&emsp;&emsp;    # 指定端口登录
+* ssh -p 22 username@ip_address     &emsp;&emsp;&emsp;    # 指定端口登录
+* ssh username@ip_address "command"     &emsp;&emsp;&emsp;    # 远程执行命令
 
 ssh 公钥配置位置：`~/.ssh/authorized_keys`
 
