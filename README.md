@@ -560,6 +560,16 @@ cat local_file | ssh remote_user@remote_host "cat - > remote_file"
 
 * -E       &emsp;&emsp;&emsp;     # 保留环境变量，即在执行sudo命令时，环境变量也会被保留。
 
+#### echo 命令
+
+用于打印字符串，并在末尾添加换行符。
+
+* echo "text"     &emsp;&emsp;&emsp;    # 打印字符串
+* echo -e "text\ntext"     &emsp;&emsp;&emsp;    # 打印时解析转义字符
+* echo -n "text"     &emsp;&emsp;&emsp;    # 不换行打印字符串
+
+部分shell自己实现了echo命令，所以有些shell中echo默认会解析转义字符，不用添加-e选项，比如zsh。
+
 ## conda指令相关
 
 ### 1. 启用conda环境
