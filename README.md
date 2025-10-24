@@ -21,11 +21,7 @@
   * [8. 远程连接/文件传输](#8-远程连接文件传输)
   * [9. 标准输入输出操作](#9-标准输入输出操作)
   * [10. 其他常用命令](#10-其他常用命令)
-* [conda指令相关](#conda指令相关)
-  * [1. 启用conda环境](#1-启用conda环境)
-  * [2. 显示conda下的虚拟环境](#2-显示conda下的虚拟环境)
-  * [3. conda虚拟环境相关](#3-conda虚拟环境相关)
-* [huggingface相关](#huggingface相关)
+* [常用工具/软件/第三方命令](#常用工具软件第三方命令)
 
 ## Linux 基本知识
 
@@ -571,45 +567,11 @@ cat local_file | ssh remote_user@remote_host "cat - > remote_file"
 
 部分shell自己实现了echo命令，所以有些shell中echo默认会解析转义字符，不用添加-e选项，比如zsh。
 
-## conda指令相关
+## 常用工具/软件/第三方命令
 
-### 1. 启用conda环境
-
-* source ./.bashrc
-
-### 2. 显示conda下的虚拟环境
-
-* conda info -e
-* conda env list
-
-### 3. conda虚拟环境相关
-
-#### 新建虚拟环境
-
-* conda create -n [name] python=[python_version]
-
-#### 激活虚拟环境
-
-* conda activate [name]
-
-#### 退出虚拟环境
-
-* conda deactivate
-
-#### 删除虚拟环境
-
-* conda remove -n [name] --all
-
-#### 复制虚拟环境
-
-* conda create -n [new_name] --clone [old_name]
-
-## huggingface相关
-
-* 安装依赖：pip install -U huggingface_hub
-* 设置环境变量：
-  * Linux：`export HF_ENDPOINT=https://hf-mirror.com`（可以写入bash）
-  * Windows：`$env:HF_ENDPOINT = "https://hf-mirror.com"`
-* 下载：
-  * 下载模型：huggingface-cli download --resume-download naver-clova-ix/donut-base-finetuned-docvqa --local-dir naver-clova-ix/donut-base-finetuned-docvqa
-  * 下载数据集：huggingface-cli download --repo-type dataset --resume-download wikitext --local-dir wikitext
+* [neovim](./tools_introduction/neovim.md)
+* [ranger](./tools_introduction/ranger.md)
+* [tmux](./tools_introduction/tmux.md)
+* [conda指令相关](./tools_introduction/conda.md)
+* [huggingface相关](./tools_introduction/huggingface.md)
+* [git](./tools_introduction/git.md)
