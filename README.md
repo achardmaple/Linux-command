@@ -577,4 +577,5 @@ cat local_file | ssh remote_user@remote_host "cat - > remote_file"
 * [conda指令相关](./tools_introduction/conda.md)
 * [huggingface相关](./tools_introduction/huggingface.md)
 * [git](./tools_introduction/git.md)
+* [yazi](./tools_introduction/yazi.md)
 * [other_tools](./tools_introduction/other_tools.md)
