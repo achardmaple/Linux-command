@@ -431,6 +431,8 @@ ftp 是通过 FTP 协议进行文件传输的命令，sftp 是 ssh 的一个子�
 * get [-r]    &emsp;&emsp;&emsp;    # 下载远程文件/目录到本地目录
 * exit        &emsp;&emsp;&emsp;    # 退出远程服务器
 
+一个支持TAB补全的ftp客户端：[lftp](./tools_introduction/other_tools.md#lftp)
+
 #### wget命令
 
 * 说明：使用wget从网上下载软件、音乐、视频
@@ -575,3 +577,4 @@ cat local_file | ssh remote_user@remote_host "cat - > remote_file"
 * [conda指令相关](./tools_introduction/conda.md)
 * [huggingface相关](./tools_introduction/huggingface.md)
 * [git](./tools_introduction/git.md)
+* [other_tools](./tools_introduction/other_tools.md)
