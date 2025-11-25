@@ -9,7 +9,7 @@
 * [Linux 基本知识](#linux-基本知识)
   * [目录表示](#目录表示)
   * [指令的常见参数](#指令的常见参数)
-* [Linux 系统结构](#linux-系统结构)
+* [Linux 文件系统](#linux-文件系统)
 * [Linux 常用指令和工具](#linux-常用指令和工具)
   * [1. 目录操作](#1-目录操作)
   * [2. 文件操作](#2-文件操作)
@@ -43,19 +43,26 @@
 * -r  &emsp;&emsp;&emsp; #递归所有子目录。
 * -f  &emsp;&emsp;&emsp; #强制执行，不询问。
 
-## Linux 系统结构
+## Linux 文件系统
 
-* / &emsp;&emsp;&emsp; #根目录：Linux 系统的根目录，是所有目录的起始点，也是最高层级的目录。
-* /bin &emsp;&emsp;&emsp; #二进制目录：存放着最常用的命令，如 ls、cp、mv、mkdir、rm 等。
-* /boot &emsp;&emsp;&emsp; #启动目录：存放着开机时所需的各种文件。
-* /dev &emsp;&emsp;&emsp; #设备目录：存放着 Linux 系统中使用的设备文件。
-* /etc &emsp;&emsp;&emsp; #系统配置文件目录：存放着各种系统配置文件。
-* /home &emsp;&emsp;&emsp; #用户目录：存放着用户的主目录。
-* /lib &emsp;&emsp;&emsp; #库目录：存放着系统最基本的动态链接库文件。
-* /mnt &emsp;&emsp;&emsp; #挂载目录：临时挂载其他文件系统的目录。
-* /proc &emsp;&emsp;&emsp; #进程目录：存放系统的内存、进程信息及内核信息。
-* /root &emsp;&emsp;&emsp; #超级用户目录：root 用户的主目录。
-* /run &emsp;&emsp;&emsp; #运行目录：存放系统启动时产生的运行时文件。
+```
+├── bin            # 系统核心二进制文件
+├── boot           # 启动系统所需的文件，如linux内核
+├── dev            # 设备
+├── etc            # 文本配置文件
+├── home           # 用户家目录
+├── lib            # 可被复用的共享lib
+├── mnt            # 通用挂载点
+├── opt            # 可选附加软件
+├── proc           # 位于内存中，不在磁盘上，用于追踪正在运行的程序
+├── root           # root用户家目录
+├── sbin           # 系统级的二进制文件，只应由root运行
+├── tmp            # 临时文件，关机丢失
+├── usr            # Unix System Resources，用于存放系统级的共享资源
+│   ├── bin        # 用户级二进制文件，非系统必须
+│   └── local/bin  # 放用户自行安装或手动编译的用户级二进制文件，确保不与系统包管理器冲突
+└── var            # 系统和程序运行过程中使用的可变数据
+```
 
 ## Linux 常用指令和工具
 
