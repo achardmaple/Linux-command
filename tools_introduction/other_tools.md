@@ -5,6 +5,7 @@
 - [lftp](#lftp)
 - [zoxide](#zoxide)
 - [croc](#croc)
+- [chafa](#chafa)
 
 ## lftp
 
